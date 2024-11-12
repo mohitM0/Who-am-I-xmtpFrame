@@ -6,6 +6,8 @@ const handleRequest = frames(async (ctx) => {
   let iAm: string | undefined;
  
   if (ctx.message) {
+    console.log(ctx)
+    console.log(ctx.message)
     iAm = (await ctx.message.walletAddress()) ?? "anonymous";
   }
  
