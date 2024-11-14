@@ -3,8 +3,7 @@ import { createFrames } from "frames.js/next";
 import { getXmtpFrameMessage, isXmtpFrameActionPayload } from "frames.js/xmtp";
  
 export const frames = createFrames({
-  // basePath must point to the route of initial frame
-  // in this case it will reside in app/frames/route.tsx therefore /frames
+ 
   basePath: "/frames",
   middleware: [
     openframes({
@@ -18,7 +17,6 @@ export const frames = createFrames({
           if (!isXmtpFrameActionPayload(body)) {
             return undefined;
           }
- 
           return getXmtpFrameMessage(body);
         },
       },
