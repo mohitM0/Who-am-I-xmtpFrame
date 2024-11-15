@@ -4,10 +4,10 @@ import { frames } from "./frames";
  
 const handleRequest = frames(async (ctx) => {
   let iAm: string | undefined;
- 
+  const walletAddress = await ctx.walletAddress();
+  console.log(walletAddress);
+   
   if (ctx.message) {
-    console.log(ctx)
-    console.log(ctx.message)
     iAm = (await ctx.message.walletAddress()) ?? "anonymous";
   }
  
